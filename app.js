@@ -36,3 +36,33 @@ const activities = [
     monthly: { current: 7, previous: 11 },
   },
 ];
+
+const buttons = document.querySelectorAll("[data-timeframe]");
+const activityCards = document.querySelectorAll(".activity-card");
+
+function updateCards(timeframe) {
+  activities.forEach((activity, index) => {
+    const currentHours = activity[timeframe].current;
+    const previousHours = activity[timeframe].previous;
+
+    const card = activityCards[index];
+    const currentElement = card.querySelector(".current");
+    const previousElement = card.querySelector(".previous");
+
+    currentElement.textContent = `${currentHours}hrs`;
+    previousElement.textContent = `Last Week - ${previousHours}hrs`;
+  });
+}
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    buttons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    // Update cards (daily, weekly, monthly)
+    const selectedTimeframe = button.textContent.toLowerCase();
+    updateCards(selectedTimeframe);
+  });
+});
+
+updateCards("daily");

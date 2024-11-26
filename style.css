@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Rubik", sans-serif;
+}
+
+.header {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  background-color: #0d1323;
+  padding: 2rem;
+  color: white;
+  width: 1110px;
+}
+
+.sidebar {
+  background-color: hsl(235, 46%, 20%);
+  grid-row: span 2;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile {
+  width: 100%;
+  height: 70%;
+  background-color: #5745dc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-left: 25px;
+  margin-top: -50px;
+  border: solid white;
+}
+
+.report-h2 {
+  font-size: 1.3rem;
+  margin-left: 25px;
+  padding-top: 50px;
+}
+
+.report-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: 25px;
+}
+
+h3 {
+  font-size: 2rem;
+  max-width: 50px;
+  font-weight: lighter;
+}
+
+.time-selector {
+  margin-top: 20px;
+  margin-left: -150px;
+}
+
+.time-selector button {
+  background: none;
+  color: white;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.time-selector .active {
+  color: #a1a6e8;
+}
+
+.activity-card {
+  border-radius: 20px;
+  width: 250px;
+  height: 250px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  /* padding: 1rem; */
+  /* position: relative; */
+  /* box-sizing: border-box; */
+  background-size: 30%;
+  background-position: top right;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.overlay {
+  /* position: absolute; */
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  height: 80%;
+  background-color: hsl(235, 46%, 20%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  /* z-index: 1; */
+}
+
+.activity-card .header,
+.activity-card .content {
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  font-size: 0.6rem;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.current {
+  font-size: 2.5rem;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  margin-left: 20px;
+}
+
+.previous {
+  font-size: 0.8rem;
+  color: #8a92b2;
+  margin-top: 2px;
+  margin-left: 20px;
+  font-weight: normal;
+}
+
+.activity-card.work {
+  background-color: #ff8b64;
+  background-image: url(images/icon-work.svg);
+}
+
+.activity-card.play {
+  background-color: #56c2e6;
+  background-image: url(images/icon-play.svg);
+}
+
+.activity-card.study {
+  background-color: #ff5e7d;
+  background-image: url(images/icon-study.svg);
+}
+
+.activity-card.exercise {
+  background-color: #4bcf83;
+  background-image: url(images/icon-exercise.svg);
+}
+
+.activity-card.social {
+  background-color: #7536d3;
+  background-image: url(images/icon-social.svg);
+}
+
+.activity-card.self-care {
+  background-color: #f1c65b;
+  background-image: url(images/icon-self-care.svg);
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+  .activities {
+    grid-template-columns: 1fr;
+  }
+}
